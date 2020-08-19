@@ -1,0 +1,173 @@
+$min-width: 640px;
+$max-container-width: 1440px;
+$breakpoint-s: 768px;
+$breakpoint-m: 1024px;
+.a11y {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px);
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body {
+    color: #fff;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.row {
+    display: flex;
+}
+
+.column-left {
+    flex: 0 0 45%;
+    overflow: hidden;
+}
+
+.column-right {
+    flex: 0 0 55%;
+    overflow: hidden;
+    &.row {
+        align-items: flex-end;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+.scrollable-wrapper {
+    height: 100%;
+}
+
+.scrollable-section {
+    height: 100%;
+    margin-right: -50px;
+    overflow: auto;
+    padding-right: 50px;
+    position: relative;
+}
+
+.background-wrapper {
+    background: url('../images/background.svg') no-repeat;
+    background-size: cover;
+}
+
+.content-wrapper {
+    box-sizing: border-box;
+    height: 100vh;
+    margin: 0 auto;
+    max-width: $max-container-width;
+    overflow: hidden;
+    padding: 40px;
+}
+
+.appointments {
+    position: relative;
+    height: 100%;
+}
+
+.appointment {
+    background: #1b3053;
+    margin-bottom: 12px;
+    padding: 16px;
+    position: relative;
+    text-align: right;
+    &.active {
+        background: #577DAE;
+    }
+    .description {
+        margin-bottom: 24px;
+        padding-right: 24px;
+        position: relative;
+        text-align: left;
+    }
+    svg {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .time {
+        display: block;
+        font-size: 11px;
+        margin-bottom: 8px;
+    }
+    .appointment-title {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+    .participants {
+        font-size: 11px;
+    }
+}
+
+.button {
+    background: none;
+    border: 1px solid #fff;
+    border-radius: 2px;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    padding: 4px 16px;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 10%;
+}
+
+.action-button {
+    background: none;
+    border: 0;
+    color: #fff;
+    flex: 0 0 50%;
+    margin: 0 0 25px;
+    outline: none;
+    padding: 0;
+    @media screen and (min-width: $breakpoint-s) {
+        flex: 0 0 33%;
+    }
+    .icon {
+        border: 1px solid #fff;
+        border-radius: 100%;
+        display: block;
+        height: 5vw;
+        margin: 0 auto 8px;
+        position: relative;
+        width: 5vw;
+        @media screen and (min-width: $breakpoint-m) {
+            height: 52px;
+            width: 52px;
+        }
+    }
+    svg {
+        font-size: 2.5vw;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        @media screen and (min-width: $breakpoint-m) {
+            font-size: 24px;
+        }
+    }
+}
+
+.current-time {
+    font-size: 32px;
+    margin-bottom: 24px;
+}
+
+.settings {
+    margin-left: 20px;
+}
+
+.column-center {
+    top: 50%;
+    position: absolute;
+    transform: translate(0, -50%);
+    width: 100%;
+    max-height: 100%;
+}
